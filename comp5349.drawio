@@ -1,9 +1,96 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="28.2.8">
   <diagram name="Page-1" id="pI4lvCsCbbazacyFevXf">
-    <mxGraphModel>
+    <mxGraphModel dx="870" dy="519" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="380" width="560" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-4" value="AWS Cloud&lt;div&gt;Region: ap-southeast-2 (Sydney)&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="416.25" y="380" width="187.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="445" width="430" height="245" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-6" value="VPC (172.31.0.0/16)" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="397.63" y="445" width="134.75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-7" value="EC2&lt;div&gt;Security Group: web-sg (Inbound: TCP 5000 from 0.0.0.0/0)&lt;/div&gt;&lt;div&gt;IAM Role: LabRole / myS3Role&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="520" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-8" value="RDS&lt;div&gt;Security Group: rds-sg (Inbound: TCP 5432 from web-sg)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="520" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-9" value="S3" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="700" y="460" width="82.5" height="82.5" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-10" value="Google Cloud / Gemini API" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="390" width="160" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-11" value="Client / User (Browser)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="267.5" y="750" width="185" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="nr7W8TUS_HOdL9vwCGTT-11" target="nr7W8TUS_HOdL9vwCGTT-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="590" as="sourcePoint" />
+            <mxPoint x="610" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-26" value="HTTP / TCP Port 5000" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nr7W8TUS_HOdL9vwCGTT-12">
+          <mxGeometry x="-0.5722" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="nr7W8TUS_HOdL9vwCGTT-7" target="nr7W8TUS_HOdL9vwCGTT-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="590" as="sourcePoint" />
+            <mxPoint x="670" y="490" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-16" value="AWS SDK (boto3) / HTTPS&lt;div&gt;(PutObject with IAM Role Auth)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nr7W8TUS_HOdL9vwCGTT-14">
+          <mxGeometry x="0.0322" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="nr7W8TUS_HOdL9vwCGTT-7" target="nr7W8TUS_HOdL9vwCGTT-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="610" as="sourcePoint" />
+            <mxPoint x="270" y="540" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="120" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-27" value="REST API / HTTPS&lt;div&gt;(JSON Payload with hardcoded API Key)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nr7W8TUS_HOdL9vwCGTT-17">
+          <mxGeometry x="0.6356" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="nr7W8TUS_HOdL9vwCGTT-7" target="nr7W8TUS_HOdL9vwCGTT-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="650" as="sourcePoint" />
+            <mxPoint x="540" y="600" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="410" y="670" />
+              <mxPoint x="500" y="670" />
+              <mxPoint x="575" y="670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-23" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nr7W8TUS_HOdL9vwCGTT-21">
+          <mxGeometry x="-0.0385" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nr7W8TUS_HOdL9vwCGTT-24" value="TCP Port 5432&lt;div&gt;(DB Credentials)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nr7W8TUS_HOdL9vwCGTT-21">
+          <mxGeometry x="-0.0119" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
